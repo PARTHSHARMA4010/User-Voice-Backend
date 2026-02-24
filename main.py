@@ -38,6 +38,10 @@ class ChatRequest(BaseModel):
     prompt: str
     context_data: Optional[Any] = None
 
+@app.get("/ping")
+def ping():
+    return {"status": "alive"}
+
 @app.get("/")
 def read_root():
     return {"status": "Auto Vision AI Backend is Online"}
